@@ -22,14 +22,16 @@ export const Header = () => {
               uri: 'https://cdn-icons-png.flaticon.com/512/5103/5103372.png',
             }}
           />
-          <Text style={styles.containerText}>7566</Text>
+          <Text style={styles.phoneText}>7566</Text>
         </View>
       </View>
 
       <View>
         <Image
           style={styles.basket}
-          source={require('../../../assets/svg/basket_50.png')}
+          source={{
+            uri: 'https://cdn-icons-png.flaticon.com/512/287/287624.png',
+          }}
         />
       </View>
     </View>
@@ -53,7 +55,6 @@ const styles = StyleSheet.create({
   },
   containerPhone: {
     flexDirection: 'row',
-    justifyContent: 'center',
     marginTop: 15,
   },
   tinyLogoPhone: {
@@ -61,14 +62,16 @@ const styles = StyleSheet.create({
     height: 30,
     marginRight: 5,
   },
-  containerText: {
-    fontSize: 18,
+  phoneText: {
+    fontSize: 24,
+    fontWeight: '700',
     color: "#f30000",
   },
   basket: {
-    marginTop: 1,
-    width: 50,
-    height: 50
+    marginVertical: 10,
+    marginHorizontal: 10,
+    width: 40,
+    height: 40
   }
 
 
