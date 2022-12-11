@@ -1,20 +1,29 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import {ScrollView, StyleSheet, View} from 'react-native';
+import {Header} from "./src/components/header/Header";
+import {Content} from "./src/components/content/Content";
+import {Coupons} from "./src/components/coupons/Сoupons";
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <Header/>
+      <ScrollView style={styles.content}>
+        <Coupons/>
+        <Content/>
+      </ScrollView>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
+  content: {
+    backgroundColor: '#f0ede6'
+
+  },
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    // backgroundColor: '#ffeece',
+    // margin:10,
+    // backgroundColor: '#ffe8cc',
+    // color:'#fff'
   },
 });
