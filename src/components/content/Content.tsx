@@ -1,5 +1,5 @@
 import React from 'react';
-import {FlatList, Image, ListRenderItem, StyleSheet, Text, View} from "react-native";
+import {Image, StyleSheet, Text, View} from "react-native";
 
 
 type ItemType = {
@@ -35,6 +35,7 @@ export const Content = () => {
   ]
 
   const newPrices = [28, 14.90, 19.30, 6.30, 27.30]
+
   const pastPrices = [30, 16, 50, 7.50, 24, 50, 30, 30]
 
   const data: ItemType[] = [...Array(20)].map((_, index) => ({
@@ -47,50 +48,79 @@ export const Content = () => {
     discount: discount[index % discount.length],
   }))
 
-  const render: ListRenderItem<ItemType> = ({item}) => {
-    return (
-      <View style={styles.items}>
-
-        <View style={styles.boxDiscount}>
-          <Text style={styles.discount}>{item.discount} %</Text>
-          <Text style={styles.title}>САМОВЫВОЗ</Text>
-        </View>
-
-        <View style={styles.boxContent}>
-          <Image
-            style={styles.img}
-            source={{
-              uri: item.img,
-            }}
-          />
-          <View style={styles.hrDasher}/>
-
-          <Text style={styles.newPrices}>{item.newPrices} руб.</Text>
-          <Text style={styles.pastPrices}>{item.pastPrices} руб.</Text>
-
-          <Text style={styles.description}>{item.description}</Text>
-
-          <Text style={styles.orderNumber}>№ {item.orderNumber}</Text>
-        </View>
-      </View>
-    )
-  }
+  // const render: ListRenderItem<ItemType> = ({item}) => {
+  //   return (
+  //     <View style={styles.items}>
+  //
+  //       <View style={styles.boxDiscount}>
+  //         <Text style={styles.discount}>{item.discount} %</Text>
+  //         <Text style={styles.title}>САМОВЫВОЗ</Text>
+  //       </View>
+  //
+  //       <View style={styles.boxContent}>
+  //         <Image
+  //           style={styles.img}
+  //           source={{
+  //             uri: item.img,
+  //           }}
+  //         />
+  //         <View style={styles.hrDasher}/>
+  //
+  //         <Text style={styles.newPrices}>{item.newPrices} руб.</Text>
+  //         <Text style={styles.pastPrices}>{item.pastPrices} руб.</Text>
+  //
+  //         <Text style={styles.description}>{item.description}</Text>
+  //
+  //         <Text style={styles.orderNumber}>№ {item.orderNumber}</Text>
+  //       </View>
+  //     </View>
+  //   )
+  // }
 
   return (
-    <FlatList
-      renderItem={render}
+    <View>
+      {data.map(item => {
+        return (
+          <View style={styles.items} key={item.id}>
 
-      data={data}
+            <View style={styles.boxDiscount}>
+              <Text style={styles.discount}>{item.discount} %</Text>
+              <Text style={styles.title}>САМОВЫВОЗ</Text>
+            </View>
 
-      ListEmptyComponent={() => {
-        return <View><Text>Пустой массив</Text></View>
-      }}
+            <View style={styles.boxContent}>
+              <Image
+                style={styles.img}
+                source={{
+                  uri: item.img,
+                }}
+              />
+              <View style={styles.hrDasher}/>
 
+              <Text style={styles.newPrices}>{item.newPrices} руб.</Text>
+              <Text style={styles.pastPrices}>{item.pastPrices} руб.</Text>
 
-      ListFooterComponent={() => {
-        return <View><Text>Футер</Text></View>
-      }}
-    />
+              <Text style={styles.description}>{item.description}</Text>
+
+              <Text style={styles.orderNumber}>№ {item.orderNumber}</Text>
+            </View>
+          </View>
+        )
+      })}
+    </View>
+
+    // <FlatList
+    //   renderItem={render}
+    //   data={data}
+    //
+    //   ListEmptyComponent={() => {
+    //     return <View><Text>Пустой массив</Text></View>
+    //   }}
+    //
+    //   ListFooterComponent={() => {
+    //     return <View><Text>Футер</Text></View>
+    //   }}
+    // />
   );
 };
 
@@ -104,7 +134,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     paddingVertical: 20,
     borderRadius: 30,
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   boxDiscount: {
     width: 100,

@@ -2,6 +2,7 @@ import {ScrollView, StyleSheet, View} from 'react-native';
 import {Header} from "./src/components/header/Header";
 import {Content} from "./src/components/content/Content";
 import {Coupons} from "./src/components/coupons/Сoupons";
+import {Footer} from "./src/components/footer/Footer";
 
 export default function App() {
   return (
@@ -10,6 +11,7 @@ export default function App() {
       <ScrollView style={styles.content}>
         <Coupons/>
         <Content/>
+        <Footer/>
       </ScrollView>
     </View>
   );
