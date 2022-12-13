@@ -38,7 +38,7 @@ export const Content = () => {
 
   const pastPrices = [30, 16, 50, 7.50, 24, 50, 30, 30]
 
-  const data: ItemType[] = [...Array(20)].map((_, index) => ({
+  const data: ItemType[] = [...Array(10)].map((_, index) => ({
     id: index + 1,
     description: descriptions[index % descriptions.length],
     newPrices: newPrices[index % newPrices.length],
