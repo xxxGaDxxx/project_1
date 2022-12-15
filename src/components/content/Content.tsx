@@ -160,6 +160,7 @@ const styles = StyleSheet.create({
     fontWeight: '700',
     backgroundColor: '#1f8f3d',
     textAlign: "center",
+    zIndex:10,
   },
   img: {
     alignContent: "center",

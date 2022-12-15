@@ -197,7 +197,7 @@ const styles = StyleSheet.create({
   containerFooter: {
     backgroundColor: '#663f35',
     padding: 20,
-    margin: -10,
+    marginHorizontal: -10,
     borderBottomColor: '#92746d',
     borderBottomWidth: 2
   },
