@@ -5,7 +5,7 @@ import SafeAreaView from 'react-native-safe-area-view';
 
 export const Header = () => {
     return (
-        <SafeAreaView forceInset={{top: 'always'}}>
+        // <SafeAreaView forceInset={{top: 'always'}}>
             <View style={styles.container}>
 
                 <View style={styles.containerHeader}>
@@ -48,7 +48,7 @@ export const Header = () => {
                 </View>
 
             </View>
-        </SafeAreaView>
+        // </SafeAreaView>
     );
 };
 

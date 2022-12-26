@@ -109,7 +109,7 @@ const styles = StyleSheet.create({
   contentFooter: {
     backgroundColor: '#563128',
     marginTop: 80,
-    paddingVertical: 50,
+    paddingTop: 50,
     paddingHorizontal: 10
   },
   text: {
